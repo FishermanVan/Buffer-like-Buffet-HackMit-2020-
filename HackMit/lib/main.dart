@@ -70,6 +70,7 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
 
           },
           child: Container(
+            child: Text('what'),
              height: 120.0,
              width: 120.0,
               decoration: BoxDecoration(
