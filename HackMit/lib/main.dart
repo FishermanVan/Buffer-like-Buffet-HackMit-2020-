@@ -13,19 +13,23 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         title: new Text('Home Page'),
       ),
-      body: Center(
-        child: RaisedButton(
+      body: Center(child: Column(
+        mainAxisSize: MainAxisSize.min, 
+        children: <Widget>[Text('Where does this go'),
+         RaisedButton(
           child: Text('Go to Section!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
         ),
+        ]
         //children: Text(
           //'Hello, xxx! Welcome back to Buffer-like-Buffet, your best comprehensive help when it comes to personal finance!',
           //textAlign: TextAlign.center,
          // overflow: TextOverflow.ellipsis,
          //style: TextStyle(fontWeight: FontWeight.bold),
          ),
+      )
       //),
     );
   }
