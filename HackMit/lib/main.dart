@@ -64,12 +64,29 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
      // mainAxisSpacing: 4, //The number of logical pixels between each child along the main axis.
      // crossAxisSpacing: 4,
       children: List.generate(6, (i) {
-        Container(child: Image.asset('images/pic$i.jpg'));
-        return Center(
-          child: Text(
-            'Item $i',
-          )
+        return GestureDetector(
+          onTap: () {
+
+
+          },
+          child: Container(
+             height: 120.0,
+             width: 120.0,
+              decoration: BoxDecoration(
+           image: DecorationImage(
+             image: AssetImage(
+              'images/pic$i.jpg'),
+           fit: BoxFit.fill,
+           
+        ),
+          //  shape: BoxShape.circle,
+      ),
+    ),
+          // child: Container(child: Center(child: Text('what'))),
+        
         );
+        // return Center(child: Text('thing'));
+        
        }
       ),
   );
