@@ -94,14 +94,6 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
 
  Widget _buildList() => ListView(
         children: [
-          _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
-          _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-          _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-          _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-          _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-              Icons.theaters),
-          _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
-        ],
       );
 
 ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
