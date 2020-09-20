@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       body: Center(child: Column(
         mainAxisSize: MainAxisSize.min, 
-        children: <Widget>[Text('Where does this go'),
+        children: <Widget>[Text('### INTRODUCTORY INFO GOES HERE ###'),
          RaisedButton(
           child: Text('Go to Section!'),
           onPressed: () {
@@ -52,13 +52,13 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
         title:Text('Choose the topic you want to learn about'),
       ),
       body: Center(
-        child: showGrid ? _buildGrid() : _buildList(),
+        child: showGrid ? _buildGrid(context) : _buildList(),
       ),
     );
   }
 }
 
-  Widget _buildGrid() => GridView.extent( //Main Axis: Row Axis   Cross Axis: Column Axis
+  Widget _buildGrid(context) => GridView.extent( //Main Axis: Row Axis   Cross Axis: Column Axis
       maxCrossAxisExtent: 150, //Maximum extet of tiles in the cross axis
       padding: const EdgeInsets.all(4), //Typical eight-pixel margin on all sides:
      // mainAxisSpacing: 4, //The number of logical pixels between each child along the main axis.
@@ -66,7 +66,7 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
       children: List.generate(6, (i) {
         return GestureDetector(
           onTap: () {
-
+            navigateToInfoPage(context, i);
 
           },
           child: Container(
@@ -108,6 +108,129 @@ ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
           color: Colors.blue[500],
         ),
       );
+
+
+
+Future navigateToInfoPage(context, i) async {
+  if(i == 0){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage0()));
+  }
+  else if(i == 1){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage1()));
+  }
+  else if(i == 2){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage2()));
+  }
+  else if(i == 3){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage3()));
+  }
+  else if(i == 4){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage4()));
+  }
+  else if(i == 5){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => InfoPage5()));
+  }
+  
+  
+}
+
+// the above and below are connected ^^^^
+// the above and below are connected
+// the above and below are connected vvvv
+
+class InfoPage0 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE 0 ###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+
+
+
+class InfoPage1 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE 1###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+
+
+
+class InfoPage2 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE 2###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+
+
+
+class InfoPage3 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE 3###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+
+
+
+
+class InfoPage4 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE4 ###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+
+
+
+class InfoPage5 extends StatelessWidget {
+   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('### TOPIC TITLE GOES HERE5 ###'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT TOPIC GOES HERE ###'),
+      ),
+    );
+  }
+}
 /*
 class HomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
