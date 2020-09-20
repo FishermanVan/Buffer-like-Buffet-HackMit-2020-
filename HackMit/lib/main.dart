@@ -29,8 +29,86 @@ class MyApp extends StatelessWidget {
          // overflow: TextOverflow.ellipsis,
          //style: TextStyle(fontWeight: FontWeight.bold),
          ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            Container(
+            height: 60.0,
+            child: DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+            
+              ),
+           ),
+            ),
+            
+          ListTile(
+              title: Text('### PUT SOMETHING HERE(profile?) ###'),
+              onTap: () {
+                Navigator.of(context).push(_createRouteProfile());
+
+
+              },
+          ),
+          ListTile(
+              title: Text('About'),
+              onTap: () {
+                Navigator.of(context).push(_createRouteAbout());
+
+
+              },
+          ),
+          ],
+      ),
       )
       //),
+    );
+  }
+}
+
+Route _createRouteProfile() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => ProfilePage(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return child;
+    },
+  );
+}
+
+class ProfilePage extends StatelessWidget {
+     Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('Profile'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT PROFILE GOES HERE ###'),
+      ),
+    );
+  }
+}
+
+Route _createRouteAbout() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => AboutPage(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return child;
+    },
+  );
+}
+
+class AboutPage extends StatelessWidget {
+     Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title:Text('About'),
+      ),
+      body: Center(
+        child: Text('### INFO ABOUT US GOES HERE ###'),
+      ),
     );
   }
 }
@@ -93,7 +171,7 @@ class TopicsPage extends StatelessWidget { //The page where user selects differn
   );
 
  Widget _buildList() => ListView(
-        children: [
+        children: []
       );
 
 ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
